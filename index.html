@@ -13,14 +13,16 @@
   <link rel="icon" href="./favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/index.css">
 </head>
 <body>
   <header class="hero" id="top">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top">
-        <img src="./static/images/spreadsheet-rl-logo.png" alt="Spreadsheet-RL logo">
+      <a class="brand" href="#top" aria-label="Spreadsheet-RL — UIUC and Meta">
+        <img class="brand-logo" src="./static/images/UIUC.png" alt="University of Illinois Urbana-Champaign">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <img class="brand-logo" src="./static/images/Meta.jpg" alt="Meta">
       </a>
       <div class="nav-links">
         <a href="#news">News</a>
@@ -35,39 +37,45 @@
       <h1>Spreadsheet-RL</h1>
       <p class="subtitle">Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning</p>
 
-      <div class="authors" aria-label="Authors">
-        <span>Banghao Chi<sup>1*</sup></span>
-        <span>Yining Xie<sup>1*</sup></span>
-        <span>Mingyuan Wu<sup>1*</sup></span>
-        <span>Jingcheng Yang<sup>1</sup></span>
-        <span>Jize Jiang<sup>1</sup></span>
-        <span>Zhaoheng Li<sup>1</sup></span>
-        <span>Shengyi Qian<sup>2</sup></span>
-        <span>Minjia Zhang<sup>1</sup></span>
-        <span>Klara Nahrstedt<sup>1</sup></span>
-        <span>Rui Hou<sup>2</sup></span>
-        <span>Xiangjun Fan<sup>2</sup></span>
-        <span>Hanchao Yu<sup>2</sup></span>
-      </div>
+      <ol class="authors" aria-label="Authors">
+        <li>Banghao Chi<sup>1*</sup></li>
+        <li>Yining Xie<sup>1*</sup></li>
+        <li>Mingyuan Wu<sup>1*</sup></li>
+        <li>Jingcheng Yang<sup>1</sup></li>
+        <li>Jize Jiang<sup>1</sup></li>
+        <li>Zhaoheng Li<sup>1</sup></li>
+        <li>Shengyi Qian<sup>2</sup></li>
+        <li>Minjia Zhang<sup>1</sup></li>
+        <li>Klara Nahrstedt<sup>1</sup></li>
+        <li>Rui Hou<sup>2</sup></li>
+        <li>Xiangjun Fan<sup>2</sup></li>
+        <li>Hanchao Yu<sup>2</sup></li>
+      </ol>
 
-      <div class="affiliations">
-        <span><sup>1</sup>University of Illinois Urbana-Champaign</span>
-        <span><sup>2</sup>Meta</span>
-        <span><sup>*</sup>Equal contribution. Mingyuan Wu served as project lead.</span>
-      </div>
+      <ul class="affiliations">
+        <li><sup>1</sup>University of Illinois Urbana-Champaign</li>
+        <li><sup>2</sup>Meta</li>
+      </ul>
+      <p class="contribution-note"><sup>*</sup>Equal contribution. Mingyuan Wu served as project lead.</p>
 
       <div class="actions" aria-label="Project links">
         <a class="button" href="https://arxiv.org/abs/2605.22642">
-          <img src="./static/images/ar.svg" alt="" aria-hidden="true"> arXiv
+          <img class="icon" src="./static/images/ar.svg" alt="" aria-hidden="true">
+          <span>arXiv</span>
         </a>
         <a class="button" href="https://github.com/Spreadsheet-RL/Spreadsheet-RL">
-          <span aria-hidden="true">GH</span> Code
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>Code</span>
         </a>
         <a class="button" href="https://huggingface.co/datasets/Spreadsheet-RL/Spreadsheet-RL">
-          <img src="./static/images/hf-logo.png" alt="" aria-hidden="true"> Dataset
+          <img class="icon" src="./static/images/hf-logo.png" alt="" aria-hidden="true">
+          <span>Dataset</span>
         </a>
         <a class="button button-accent" href="https://huggingface.co/papers/2605.22642">
-          <img src="./static/images/hf-logo.png" alt="" aria-hidden="true"> HF Daily
+          <img class="icon" src="./static/images/hf-logo.png" alt="" aria-hidden="true">
+          <span>HF Daily</span>
         </a>
       </div>
     </div>
@@ -78,16 +86,16 @@
       <div class="container">
         <h2>News</h2>
         <ul class="news-list">
-          <li><time datetime="2026-05-21">2026-05-21</time> The Spreadsheet-RL arXiv preprint is available at <a href="https://arxiv.org/abs/2605.22642">arXiv:2605.22642</a>, and the paper is featured on <a href="https://huggingface.co/papers/2605.22642">Hugging Face Daily Papers</a>.</li>
-          <li><time datetime="2026-05-17">2026-05-17</time> Code and dataset release for Spreadsheet-RL, including training configs, Slurm scripts, the Excel reward service, SandboxFusion setup, parquet splits, and workbook files.</li>
+          <li><time datetime="2026-05-21">2026-05-21</time><span>The Spreadsheet-RL arXiv preprint is available at <a href="https://arxiv.org/abs/2605.22642">arXiv:2605.22642</a>, and the paper is featured on <a href="https://huggingface.co/papers/2605.22642">Hugging Face Daily Papers</a>.</span></li>
+          <li><time datetime="2026-05-17">2026-05-17</time><span>Code and dataset release for Spreadsheet-RL, including training configs, Slurm scripts, the Excel reward service, SandboxFusion setup, parquet splits, and workbook files.</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container intro-grid">
-        <div>
-          <h2>Abstract</h2>
+    <section class="section abstract-section">
+      <div class="container">
+        <h2>Abstract</h2>
+        <div class="abstract-body">
           <p>
             Spreadsheet systems such as Microsoft Excel and Google Sheets are central to modern data-centric workflows, but existing spreadsheet agents often rely on prompt engineering over general-purpose models and struggle with complex, multi-step tasks. Spreadsheet-RL is an RL fine-tuning framework for training specialized spreadsheet agents inside a realistic Microsoft Excel environment.
           </p>
@@ -125,7 +133,7 @@
         <figure class="wide-figure">
           <img src="./static/images/overview.png" alt="Spreadsheet-RL framework overview showing RL data, Spreadsheet Data Agent, Spreadsheet Gym, tools, verifier, and GRPO training.">
           <figcaption>
-            Overview of Spreadsheet-RL. The data agent constructs paired initial and oracle workbooks; Spreadsheet Gym lets the policy interact with Excel through specialized tools; the verifier compares edited and oracle workbooks to provide outcome rewards for GRPO.
+            <strong>Figure 1.</strong> Overview of Spreadsheet-RL. The data agent constructs paired initial and oracle workbooks; Spreadsheet Gym lets the policy interact with Excel through specialized tools; the verifier compares edited and oracle workbooks to provide outcome rewards for GRPO.
           </figcaption>
         </figure>
 
@@ -221,7 +229,7 @@
         <figure class="wide-figure narrow">
           <img src="./static/images/training_dynamics.png" alt="Training dynamics plots for reward, response length, turns, and SpreadsheetBench accuracy over 60 training steps.">
           <figcaption>
-            RL training raises reward and validation accuracy while reducing rollout length and mean number of turns.
+            <strong>Figure 2.</strong> RL training raises reward and validation accuracy while reducing rollout length and mean number of turns.
           </figcaption>
         </figure>
       </div>
@@ -240,7 +248,7 @@
         </div>
         <figure class="side-figure">
           <img src="./static/images/domain_finance_example.png" alt="Example Domain-Spreadsheet finance task about monitoring collateral under credit support annexes.">
-          <figcaption>Example finance workflow from Domain-Spreadsheet.</figcaption>
+          <figcaption><strong>Figure 3.</strong> Example finance workflow from Domain-Spreadsheet.</figcaption>
         </figure>
       </div>
     </section>
@@ -250,26 +258,48 @@
         <h2>Resources</h2>
         <div class="resource-grid">
           <a href="https://arxiv.org/abs/2605.22642">
-            <strong>Paper</strong>
-            <span>arXiv:2605.22642</span>
+            <span class="resource-icon">
+              <img src="./static/images/ar.svg" alt="" aria-hidden="true">
+            </span>
+            <div class="resource-text">
+              <strong>Paper</strong>
+              <span>arXiv:2605.22642</span>
+            </div>
           </a>
           <a href="https://github.com/Spreadsheet-RL/Spreadsheet-RL">
-            <strong>Code</strong>
-            <span>Training, tools, reward service, and verl integration</span>
+            <span class="resource-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </span>
+            <div class="resource-text">
+              <strong>Code</strong>
+              <span>Training, tools, reward service, and verl integration</span>
+            </div>
           </a>
           <a href="https://huggingface.co/datasets/Spreadsheet-RL/Spreadsheet-RL">
-            <strong>Dataset</strong>
-            <span>Parquet splits and workbook files</span>
+            <span class="resource-icon">
+              <img src="./static/images/hf-logo.png" alt="" aria-hidden="true">
+            </span>
+            <div class="resource-text">
+              <strong>Dataset</strong>
+              <span>Parquet splits and workbook files</span>
+            </div>
           </a>
           <a href="https://huggingface.co/papers/2605.22642">
-            <strong>HF Daily Papers</strong>
-            <span>Paper discussion and upvote page</span>
+            <span class="resource-icon">
+              <img src="./static/images/hf-logo.png" alt="" aria-hidden="true">
+            </span>
+            <div class="resource-text">
+              <strong>HF Daily Papers</strong>
+              <span>Paper discussion and upvote page</span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section citation-section">
       <div class="container">
         <h2>Citation</h2>
         <pre><code>@misc{chi2026spreadsheetrl,

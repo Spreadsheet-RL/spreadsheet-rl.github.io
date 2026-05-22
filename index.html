@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spreadsheet-RL trains specialized spreadsheet agents in realistic Microsoft Excel environments via reinforcement learning.">
+  <meta name="keywords" content="Spreadsheet-RL, spreadsheet agents, reinforcement learning, Microsoft Excel, LLM agents, SpreadsheetBench, Domain-Spreadsheet">
+  <meta property="og:title" content="Spreadsheet-RL">
+  <meta property="og:description" content="Advancing LLM agents on realistic spreadsheet tasks via reinforcement learning.">
+  <meta property="og:image" content="https://spreadsheet-rl.github.io/static/images/overview.png">
+  <meta property="og:url" content="https://spreadsheet-rl.github.io/">
+  <title>Spreadsheet-RL</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">
+        <img src="./static/images/spreadsheet-rl-logo.png" alt="Spreadsheet-RL logo">
+      </a>
+      <div class="nav-links">
+        <a href="#news">News</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#resources">Resources</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">Open spreadsheet-agent RL framework</p>
+      <h1>Spreadsheet-RL</h1>
+      <p class="subtitle">Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning</p>
+
+      <div class="authors" aria-label="Authors">
+        <span>Banghao Chi<sup>1*</sup></span>
+        <span>Yining Xie<sup>1*</sup></span>
+        <span>Mingyuan Wu<sup>1*</sup></span>
+        <span>Jingcheng Yang<sup>1</sup></span>
+        <span>Jize Jiang<sup>1</sup></span>
+        <span>Zhaoheng Li<sup>1</sup></span>
+        <span>Shengyi Qian<sup>2</sup></span>
+        <span>Minjia Zhang<sup>1</sup></span>
+        <span>Klara Nahrstedt<sup>1</sup></span>
+        <span>Rui Hou<sup>2</sup></span>
+        <span>Xiangjun Fan<sup>2</sup></span>
+        <span>Hanchao Yu<sup>2</sup></span>
+      </div>
+
+      <div class="affiliations">
+        <span><sup>1</sup>University of Illinois Urbana-Champaign</span>
+        <span><sup>2</sup>Meta</span>
+        <span><sup>*</sup>Equal contribution. Mingyuan Wu served as project lead.</span>
+      </div>
+
+      <div class="actions" aria-label="Project links">
+        <a class="button" href="https://arxiv.org/abs/2605.22642">
+          <img src="./static/images/ar.svg" alt="" aria-hidden="true"> arXiv
+        </a>
+        <a class="button" href="https://github.com/Spreadsheet-RL/Spreadsheet-RL">
+          <span aria-hidden="true">GH</span> Code
+        </a>
+        <a class="button" href="https://huggingface.co/datasets/Spreadsheet-RL/Spreadsheet-RL">
+          <img src="./static/images/hf-logo.png" alt="" aria-hidden="true"> Dataset
+        </a>
+        <a class="button button-accent" href="https://huggingface.co/papers/2605.22642">
+          <img src="./static/images/hf-logo.png" alt="" aria-hidden="true"> HF Daily
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section news-band" id="news">
+      <div class="container">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li><time datetime="2026-05-21">2026-05-21</time> The Spreadsheet-RL arXiv preprint is available at <a href="https://arxiv.org/abs/2605.22642">arXiv:2605.22642</a>, and the paper is featured on <a href="https://huggingface.co/papers/2605.22642">Hugging Face Daily Papers</a>.</li>
+          <li><time datetime="2026-05-17">2026-05-17</time> Code and dataset release for Spreadsheet-RL, including training configs, Slurm scripts, the Excel reward service, SandboxFusion setup, parquet splits, and workbook files.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container intro-grid">
+        <div>
+          <h2>Abstract</h2>
+          <p>
+            Spreadsheet systems such as Microsoft Excel and Google Sheets are central to modern data-centric workflows, but existing spreadsheet agents often rely on prompt engineering over general-purpose models and struggle with complex, multi-step tasks. Spreadsheet-RL is an RL fine-tuning framework for training specialized spreadsheet agents inside a realistic Microsoft Excel environment.
+          </p>
+          <p>
+            The framework combines scalable start-goal spreadsheet construction, a multi-turn Spreadsheet Gym with spreadsheet-native tools and sandboxed code execution, and outcome-based GRPO training. On SpreadsheetBench, Spreadsheet-RL improves Qwen3-4B-Thinking-2507 Pass@1 from 12.0% to 23.4%; on Domain-Spreadsheet, it improves Pass@1 from 8.4% to 17.2%.
+          </p>
+        </div>
+        <div class="metric-grid" aria-label="Key metrics">
+          <article class="metric">
+            <strong>5,928</strong>
+            <span>filtered ExcelForum training tasks</span>
+          </article>
+          <article class="metric">
+            <strong>23.4%</strong>
+            <span>SpreadsheetBench Pass@1 after RL</span>
+          </article>
+          <article class="metric">
+            <strong>1,660</strong>
+            <span>Domain-Spreadsheet evaluation rollouts</span>
+          </article>
+          <article class="metric">
+            <strong>17.2%</strong>
+            <span>Domain-Spreadsheet Pass@1 after RL</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visual-section" id="method">
+      <div class="container">
+        <h2>Framework</h2>
+        <p class="section-lead">
+          Spreadsheet-RL links realistic data construction, faithful Excel interaction, and verifiable outcome rewards into one reproducible training loop.
+        </p>
+        <figure class="wide-figure">
+          <img src="./static/images/overview.png" alt="Spreadsheet-RL framework overview showing RL data, Spreadsheet Data Agent, Spreadsheet Gym, tools, verifier, and GRPO training.">
+          <figcaption>
+            Overview of Spreadsheet-RL. The data agent constructs paired initial and oracle workbooks; Spreadsheet Gym lets the policy interact with Excel through specialized tools; the verifier compares edited and oracle workbooks to provide outcome rewards for GRPO.
+          </figcaption>
+        </figure>
+
+        <div class="feature-grid">
+          <article>
+            <h3>Spreadsheet Data Agent</h3>
+            <p>Collects public ExcelForum threads after January 1, 2024, synthesizes oracle final workbooks with coding agents, and filters tasks through rule-based validation.</p>
+          </article>
+          <article>
+            <h3>Spreadsheet Gym</h3>
+            <p>Runs multi-turn agent rollouts in Microsoft Excel with isolated workspaces, spreadsheet-native tools, and SandboxFusion-backed code execution.</p>
+          </article>
+          <article>
+            <h3>Outcome-Based RL</h3>
+            <p>Uses an asynchronous Excel reward API to recalculate final workbooks and compare target ranges against oracle workbooks for GRPO training.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <h2>Results</h2>
+        <p class="section-lead">
+          Spreadsheet-native harnessing, richer tool access, and RL post-training each improve the same 4B open-source base model.
+        </p>
+
+        <div class="tables">
+          <article class="table-block">
+            <h3>SpreadsheetBench Pass@1</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Qwen3-4B-Thinking-2507 Setting</th>
+                    <th>Environment</th>
+                    <th>Pass@1</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Base model</td>
+                    <td>Spreadsheet Gym</td>
+                    <td>12.0</td>
+                  </tr>
+                  <tr>
+                    <td>+ Spreadsheet-native interaction harness</td>
+                    <td>Spreadsheet Gym</td>
+                    <td>15.6</td>
+                  </tr>
+                  <tr>
+                    <td>+ Comprehensive spreadsheet-tool access</td>
+                    <td>Spreadsheet Gym</td>
+                    <td>19.3</td>
+                  </tr>
+                  <tr class="best-row">
+                    <td>+ Spreadsheet-RL post-training</td>
+                    <td>Spreadsheet Gym</td>
+                    <td>23.4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="table-block">
+            <h3>Domain-Spreadsheet Pass@1</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Domain</th>
+                    <th>#Eval.</th>
+                    <th>Base</th>
+                    <th>RL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Finance-B</td><td>597</td><td>15.6</td><td>29.3</td></tr>
+                  <tr><td>Finance-I</td><td>388</td><td>7.7</td><td>16.2</td></tr>
+                  <tr><td>Finance-A</td><td>135</td><td>8.1</td><td>19.3</td></tr>
+                  <tr><td>Supply Chain</td><td>180</td><td>1.1</td><td>5.0</td></tr>
+                  <tr><td>HR</td><td>185</td><td>0.5</td><td>3.2</td></tr>
+                  <tr><td>Sales</td><td>86</td><td>1.2</td><td>5.8</td></tr>
+                  <tr><td>Real Estate</td><td>89</td><td>1.1</td><td>1.1</td></tr>
+                  <tr class="best-row"><td>Overall</td><td>1,660</td><td>8.4</td><td>17.2</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+
+        <figure class="wide-figure narrow">
+          <img src="./static/images/training_dynamics.png" alt="Training dynamics plots for reward, response length, turns, and SpreadsheetBench accuracy over 60 training steps.">
+          <figcaption>
+            RL training raises reward and validation accuracy while reducing rollout length and mean number of turns.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section dataset-section">
+      <div class="container dataset-grid">
+        <div>
+          <h2>Domain-Spreadsheet</h2>
+          <p>
+            Domain-Spreadsheet is a domain-specific benchmark covering finance, supply chain management, human resources, sales, and real estate. It emphasizes professional analytical workflows such as comparable-company analysis, value-at-risk computation, inventory analysis, compensation benchmarking, and property valuation.
+          </p>
+          <p>
+            The released Hugging Face dataset contains parser-specific parquet files and a workbook archive with ExcelForum training tasks, SpreadsheetBench tasks, and Domain-Spreadsheet tasks.
+          </p>
+        </div>
+        <figure class="side-figure">
+          <img src="./static/images/domain_finance_example.png" alt="Example Domain-Spreadsheet finance task about monitoring collateral under credit support annexes.">
+          <figcaption>Example finance workflow from Domain-Spreadsheet.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section resource-band" id="resources">
+      <div class="container">
+        <h2>Resources</h2>
+        <div class="resource-grid">
+          <a href="https://arxiv.org/abs/2605.22642">
+            <strong>Paper</strong>
+            <span>arXiv:2605.22642</span>
+          </a>
+          <a href="https://github.com/Spreadsheet-RL/Spreadsheet-RL">
+            <strong>Code</strong>
+            <span>Training, tools, reward service, and verl integration</span>
+          </a>
+          <a href="https://huggingface.co/datasets/Spreadsheet-RL/Spreadsheet-RL">
+            <strong>Dataset</strong>
+            <span>Parquet splits and workbook files</span>
+          </a>
+          <a href="https://huggingface.co/papers/2605.22642">
+            <strong>HF Daily Papers</strong>
+            <span>Paper discussion and upvote page</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Citation</h2>
+        <pre><code>@misc{chi2026spreadsheetrl,
+  title         = {Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning},
+  author        = {Banghao Chi and Yining Xie and Mingyuan Wu and Jingcheng Yang and Jize Jiang and Zhaoheng Li and Shengyi Qian and Minjia Zhang and Klara Nahrstedt and Rui Hou and Xiangjun Fan and Hanchao Yu},
+  year          = {2026},
+  eprint        = {2605.22642},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  doi           = {10.48550/arXiv.2605.22642},
+  url           = {https://arxiv.org/abs/2605.22642}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>All data and code releases are maintained by the corresponding authors at UIUC and are not affiliated with Meta.</p>
+      <p>This website is adapted from the Nerfies project page template and released under the Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+    </div>
+  </footer>
+</body>
+</html>

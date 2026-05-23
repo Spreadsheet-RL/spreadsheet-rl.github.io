@@ -259,6 +259,14 @@ h1 {
   white-space: nowrap;
 }
 
+.authors a {
+  color: inherit;
+}
+
+.authors a:hover {
+  color: #fff;
+}
+
 .authors li:not(:last-child)::after {
   content: ",";
   margin-left: 1px;

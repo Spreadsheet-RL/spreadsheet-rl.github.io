@@ -34,6 +34,21 @@ html {
   scroll-behavior: smooth;
 }
 
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.hero :focus-visible {
+  outline-color: #b9e0f8;
+}
+
+section[id],
+header[id] {
+  scroll-margin-top: 24px;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -241,11 +256,12 @@ h1 {
 
 .authors li {
   padding: 0 4px;
+  white-space: nowrap;
 }
 
 .authors li:not(:last-child)::after {
   content: ",";
-  margin-left: -2px;
+  margin-left: 1px;
   color: rgba(255, 255, 255, 0.55);
 }
 
@@ -649,20 +665,13 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
-td:last-child,
-th:last-child,
-td:nth-last-child(-n+2),
-th:nth-last-child(-n+2) {
+th.num,
+td.num {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-td:first-child,
-th:first-child {
-  text-align: left;
-}
-
-td:last-child {
+tbody td.num:last-child {
   font-weight: 700;
   color: var(--navy);
 }
@@ -677,7 +686,7 @@ td:last-child {
   font-weight: 700;
 }
 
-.best-row td:last-child {
+.best-row td.num:last-child {
   color: var(--green);
 }
 
@@ -796,22 +805,145 @@ td:last-child {
   border-top: 1px solid var(--line);
 }
 
-pre {
-  margin: 0;
-  padding: 24px 26px;
-  overflow-x: auto;
+.citation-block {
   border: 1px solid #1a3854;
   border-radius: var(--radius);
   background: linear-gradient(180deg, #0e2336 0%, #0a1c2c 100%);
-  color: #d8e9f5;
-  font-family: var(--mono);
-  font-size: 0.88rem;
-  line-height: 1.65;
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-pre code {
+.citation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px 10px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.citation-label {
+  color: #b8d3e6;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e6f1f8;
   font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.copy-button .copy-icon,
+.copy-button .check-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.copy-button .check-icon {
+  display: none;
+  color: #6fe1a8;
+}
+
+.copy-button.is-copied {
+  color: #c9f4dc;
+  border-color: rgba(111, 225, 168, 0.4);
+  background: rgba(46, 156, 102, 0.18);
+}
+
+.copy-button.is-copied .copy-icon {
+  display: none;
+}
+
+.copy-button.is-copied .check-icon {
+  display: inline-block;
+}
+
+.citation-block pre {
+  margin: 0;
+  padding: 22px 24px;
+  overflow-x: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #d8e9f5;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  box-shadow: none;
+}
+
+.citation-block pre code {
+  font-family: inherit;
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--navy);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* ---------- Footer ---------- */

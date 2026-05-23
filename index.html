@@ -132,7 +132,7 @@
           Spreadsheet-RL links realistic data construction, faithful Excel interaction, and verifiable outcome rewards into one reproducible training loop.
         </p>
         <figure class="wide-figure">
-          <img src="./static/images/overview.png" alt="Spreadsheet-RL framework overview showing RL data, Spreadsheet Data Agent, Spreadsheet Gym, tools, verifier, and GRPO training.">
+          <img src="./static/images/overview.png" alt="Spreadsheet-RL framework overview showing RL data, Spreadsheet Data Agent, Spreadsheet Gym, tools, verifier, and GRPO training." loading="lazy" decoding="async">
           <figcaption>
             <strong>Figure 1.</strong> Overview of Spreadsheet-RL. The data agent constructs paired initial and oracle workbooks; Spreadsheet Gym lets the policy interact with Excel through specialized tools; the verifier compares edited and oracle workbooks to provide outcome rewards for GRPO.
           </figcaption>
@@ -171,29 +171,29 @@
                   <tr>
                     <th>Qwen3-4B-Thinking-2507 Setting</th>
                     <th>Environment</th>
-                    <th>Pass@1</th>
+                    <th class="num">Pass@1</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Base model</td>
                     <td>Spreadsheet Gym</td>
-                    <td>12.0</td>
+                    <td class="num">12.0</td>
                   </tr>
                   <tr>
                     <td>+ Spreadsheet-native interaction harness</td>
                     <td>Spreadsheet Gym</td>
-                    <td>15.6</td>
+                    <td class="num">15.6</td>
                   </tr>
                   <tr>
                     <td>+ Comprehensive spreadsheet-tool access</td>
                     <td>Spreadsheet Gym</td>
-                    <td>19.3</td>
+                    <td class="num">19.3</td>
                   </tr>
                   <tr class="best-row">
                     <td>+ Spreadsheet-RL post-training</td>
                     <td>Spreadsheet Gym</td>
-                    <td>23.4</td>
+                    <td class="num">23.4</td>
                   </tr>
                 </tbody>
               </table>
@@ -207,20 +207,20 @@
                 <thead>
                   <tr>
                     <th>Domain</th>
-                    <th>#Eval.</th>
-                    <th>Base</th>
-                    <th>RL</th>
+                    <th class="num">#Eval.</th>
+                    <th class="num">Base</th>
+                    <th class="num">RL</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Finance-B</td><td>597</td><td>15.6</td><td>29.3</td></tr>
-                  <tr><td>Finance-I</td><td>388</td><td>7.7</td><td>16.2</td></tr>
-                  <tr><td>Finance-A</td><td>135</td><td>8.1</td><td>19.3</td></tr>
-                  <tr><td>Supply Chain</td><td>180</td><td>1.1</td><td>5.0</td></tr>
-                  <tr><td>HR</td><td>185</td><td>0.5</td><td>3.2</td></tr>
-                  <tr><td>Sales</td><td>86</td><td>1.2</td><td>5.8</td></tr>
-                  <tr><td>Real Estate</td><td>89</td><td>1.1</td><td>1.1</td></tr>
-                  <tr class="best-row"><td>Overall</td><td>1,660</td><td>8.4</td><td>17.2</td></tr>
+                  <tr><td>Finance-B</td><td class="num">597</td><td class="num">15.6</td><td class="num">29.3</td></tr>
+                  <tr><td>Finance-I</td><td class="num">388</td><td class="num">7.7</td><td class="num">16.2</td></tr>
+                  <tr><td>Finance-A</td><td class="num">135</td><td class="num">8.1</td><td class="num">19.3</td></tr>
+                  <tr><td>Supply Chain</td><td class="num">180</td><td class="num">1.1</td><td class="num">5.0</td></tr>
+                  <tr><td>HR</td><td class="num">185</td><td class="num">0.5</td><td class="num">3.2</td></tr>
+                  <tr><td>Sales</td><td class="num">86</td><td class="num">1.2</td><td class="num">5.8</td></tr>
+                  <tr><td>Real Estate</td><td class="num">89</td><td class="num">1.1</td><td class="num">1.1</td></tr>
+                  <tr class="best-row"><td>Overall</td><td class="num">1,660</td><td class="num">8.4</td><td class="num">17.2</td></tr>
                 </tbody>
               </table>
             </div>
@@ -228,7 +228,7 @@
         </div>
 
         <figure class="wide-figure narrow">
-          <img src="./static/images/training_dynamics.png" alt="Training dynamics plots for reward, response length, turns, and SpreadsheetBench accuracy over 60 training steps.">
+          <img src="./static/images/training_dynamics.png" alt="Training dynamics plots for reward, response length, turns, and SpreadsheetBench accuracy over 60 training steps." loading="lazy" decoding="async">
           <figcaption>
             <strong>Figure 2.</strong> RL training raises reward and validation accuracy while reducing rollout length and mean number of turns.
           </figcaption>
@@ -248,7 +248,7 @@
           </p>
         </div>
         <figure class="side-figure">
-          <img src="./static/images/domain_finance_example.png" alt="Example Domain-Spreadsheet finance task about monitoring collateral under credit support annexes.">
+          <img src="./static/images/domain_finance_example.png" alt="Example Domain-Spreadsheet finance task about monitoring collateral under credit support annexes." loading="lazy" decoding="async">
           <figcaption><strong>Figure 3.</strong> Example finance workflow from Domain-Spreadsheet.</figcaption>
         </figure>
       </div>
@@ -303,7 +303,21 @@
     <section class="section citation-section">
       <div class="container">
         <h2>Citation</h2>
-        <pre><code>@misc{chi2026spreadsheetrl,
+        <div class="citation-block">
+          <div class="citation-header">
+            <span class="citation-label">BibTeX</span>
+            <button class="copy-button" type="button" data-copy-target="#citation-bibtex" aria-label="Copy BibTeX citation to clipboard">
+              <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="copy-label">Copy</span>
+            </button>
+          </div>
+          <pre id="citation-bibtex"><code>@misc{chi2026spreadsheetrl,
   title         = {Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning},
   author        = {Banghao Chi and Yining Xie and Mingyuan Wu and Jingcheng Yang and Jize Jiang and Zhaoheng Li and Shengyi Qian and Minjia Zhang and Klara Nahrstedt and Rui Hou and Xiangjun Fan and Hanchao Yu},
   year          = {2026},
@@ -313,6 +327,7 @@
   doi           = {10.48550/arXiv.2605.22642},
   url           = {https://arxiv.org/abs/2605.22642}
 }</code></pre>
+        </div>
       </div>
     </section>
   </main>
@@ -323,5 +338,63 @@
       <p>This website is adapted from the Nerfies project page template and released under the Creative Commons Attribution-ShareAlike 4.0 International License.</p>
     </div>
   </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    (function () {
+      // Copy-to-clipboard for citation
+      document.querySelectorAll('.copy-button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = document.querySelector(btn.dataset.copyTarget);
+          if (!target) return;
+          var text = target.innerText;
+          var done = function () {
+            btn.classList.add('is-copied');
+            var label = btn.querySelector('.copy-label');
+            if (label) label.textContent = 'Copied';
+            window.clearTimeout(btn._copyTimer);
+            btn._copyTimer = window.setTimeout(function () {
+              btn.classList.remove('is-copied');
+              if (label) label.textContent = 'Copy';
+            }, 1800);
+          };
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(done).catch(fallback);
+          } else {
+            fallback();
+          }
+          function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.top = '-1000px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) {}
+            document.body.removeChild(ta);
+          }
+        });
+      });
+
+      // Back-to-top visibility toggle
+      var topBtn = document.querySelector('.back-to-top');
+      if (topBtn) {
+        var toggle = function () {
+          topBtn.classList.toggle('is-visible', window.scrollY > 480);
+        };
+        toggle();
+        window.addEventListener('scroll', toggle, { passive: true });
+        topBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
